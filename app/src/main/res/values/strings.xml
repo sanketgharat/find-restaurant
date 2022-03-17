@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">FindRestaurant</string>
+    <string name="radius_selector">Radius Selector</string>
+    <string name="sample_radius_value">1 KM</string>
+    <string name="slider_start_value">100 M</string>
+    <string name="slider_end_value">5 kM</string>
+    <string name="no_data_found">No data found \nPlease check internet connectivity</string>
+    <string name="check_internet_message">Please check internet connection</string>
+    <string name="sample_rating_value">4.0</string>
+    <string name="radius_value_km">%1$d KM</string>
+    <string name="radius_value_m">%1$d M</string>
 </resources>
