@@ -127,8 +127,10 @@ class RestaurantsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         /*for (item in list) {
             add(item)
         }*/
+        val oldSize = this.list.size
+        val newToAdd = list.size
         this.list.addAll(list)
-        notifyDataSetChanged()
+        notifyItemRangeInserted(oldSize, newToAdd)
     }
 
     fun remove(item: Businesses?) {
