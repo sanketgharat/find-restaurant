@@ -19,6 +19,7 @@ interface ApiServiceInterface {
         @Query("radius") radius: Int,
         @Query("sort_by") sortBy: String,
         @Query("limit") limit: Int,
+        @Query("offset") offset: Int
     ): Restaurant
 
 }

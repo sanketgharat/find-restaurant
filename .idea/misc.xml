@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/sanke/AndroidStudioProjects/FindRestaurant/app/src/main/res/drawable/red_circle.xml" value="0.3828125" />
         <entry key="..\:/Users/sanke/AndroidStudioProjects/FindRestaurant/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sanke/AndroidStudioProjects/FindRestaurant/app/src/main/res/layout/layout_loading_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sanke/AndroidStudioProjects/FindRestaurant/app/src/main/res/layout/loader_dialog_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sanke/AndroidStudioProjects/FindRestaurant/app/src/main/res/layout/restaurant_item_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sanke/AndroidStudioProjects/FindRestaurant/app/src/main/res/layout/restaurant_recycler_item_layout.xml" value="0.36666666666666664" />

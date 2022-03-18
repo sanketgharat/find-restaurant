@@ -35,6 +35,7 @@ class RestaurantViewModel @Inject constructor(
         radius: Int,
         sortBy: String = "distance",
         limit: Int = 15,
+        offset: Int = 0,
     ) {
 
         restaurantApiJob?.cancel()
@@ -43,7 +44,7 @@ class RestaurantViewModel @Inject constructor(
             _restaurantApiResult.postValue(ApiResponse.Loading)
             withContext(IO) {
                 try {
-                    val result = repository.getData(API_TOKEN, term, location, latitude, longitude, radius, sortBy, limit)
+                    val result = repository.getData(API_TOKEN, term, location, latitude, longitude, radius, sortBy, limit, offset)
                     _restaurantApiResult.postValue(ApiResponse.Success<Restaurant>(result))
                 } catch (throwable: Throwable) {
                     _restaurantApiResult.postValue(ApiResponse.Failure(throwable.message.toString()))
