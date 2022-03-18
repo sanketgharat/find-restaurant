@@ -4,9 +4,14 @@
     <string name="sample_radius_value">1 KM</string>
     <string name="slider_start_value">100 M</string>
     <string name="slider_end_value">5 kM</string>
-    <string name="no_data_found">No data found \nPlease check internet connectivity</string>
+    <string name="no_data_found">No data found</string>
     <string name="check_internet_message">Please check internet connection</string>
     <string name="sample_rating_value">4.0</string>
     <string name="radius_value_km">%1$d KM</string>
     <string name="radius_value_m">%1$d M</string>
+    <string name="location_permission_denied_message">Without permission we cannot auto detect location for searching restaurants near you.</string>
+    <string name="location_loading_text">Please wait\nfetching restaurants near you</string>
+    <string name="distance_address_line">%1$dm. %2$s, %2$s</string>
+    <string name="restaurant_status_open">Currently Open</string>
+    <string name="restaurant_status_closed">Currently Closed</string>
 </resources>

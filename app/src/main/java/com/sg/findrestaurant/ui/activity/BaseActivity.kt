@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 abstract class BaseActivity : AppCompatActivity() {
     //abstract fun getIntentData()
     abstract fun initViews()
+    abstract fun initClasses()
     abstract fun initObservers()
     abstract fun loadData()
 

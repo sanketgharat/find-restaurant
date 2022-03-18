@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.sg.findrestaurant.R
 import com.sg.findrestaurant.data.model.Businesses
 import com.sg.findrestaurant.databinding.RestaurantRecyclerItemLayoutBinding
 
@@ -61,6 +62,15 @@ class RestaurantsListAdapter : RecyclerView.Adapter<RestaurantsListAdapter.MyVie
                 .into(binding.imageRestaurantIcon)
 
             binding.textRating.text = item.rating.toString()
+            val context = binding.textRestaurantDistanceAddressLine.context
+            val distance = item.distance.toInt()
+            val address = if (item.location != null) item.location!!.address1 else ""
+            binding.textRestaurantDistanceAddressLine.text =
+                context.getString(R.string.distance_address_line, distance, address)
+            binding.textRestaurantStatus.text =
+                if (item.isClosed) context.getString(R.string.restaurant_status_closed) else context.getString(
+                    R.string.restaurant_status_open
+                )
 
         }
 

@@ -53,4 +53,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/image_restaurant_icon" />
 
+    <TextView
+        android:id="@+id/text_restaurant_distance_address_line"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/text_size_small_x2"
+        app:layout_constraintEnd_toStartOf="@id/text_rating"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/guideline_photo"
+        app:layout_constraintTop_toBottomOf="@id/text_restaurant_name" />
+
+    <TextView
+        android:id="@+id/text_restaurant_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/text_size_small_x2"
+        app:layout_constraintEnd_toStartOf="@id/text_rating"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/guideline_photo"
+        app:layout_constraintTop_toBottomOf="@id/text_restaurant_distance_address_line" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

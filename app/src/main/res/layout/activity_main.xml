@@ -38,18 +38,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbarSize="1dp"
-        android:valueFrom="100"
-        android:valueTo="5000"
         android:stepSize="100"
         android:value="@integer/default_radius_value_meters"
-        app:tickVisible="false"
-        app:trackColor="@color/black"
-        app:tickColorActive="@color/black"
-        app:thumbColor="@color/black"
+        android:valueFrom="100"
+        android:valueTo="5000"
         app:labelBehavior="floating"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_radius_selector_value" />
+        app:layout_constraintTop_toBottomOf="@id/text_radius_selector_value"
+        app:thumbColor="@color/black"
+        app:tickColorActive="@color/black"
+        app:tickVisible="false"
+        app:trackColor="@color/black" />
 
     <TextView
         android:id="@+id/text_slider_start"
@@ -58,7 +58,7 @@
         android:layout_marginStart="@dimen/spacing_medium"
         android:text="@string/slider_start_value"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_size_small"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/slider" />
 
@@ -69,7 +69,7 @@
         android:layout_marginEnd="@dimen/spacing_medium"
         android:text="@string/slider_end_value"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_size_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/slider" />
 
@@ -77,19 +77,70 @@
         android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:padding="@dimen/spacing_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_slider_start"
-        tools:context=".ui.activity.MainActivity"
-        android:padding="@dimen/spacing_medium">
+        tools:context=".ui.activity.MainActivity">
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_restaurants"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/restaurant_recycler_item_layout"/>
+            tools:listitem="@layout/restaurant_recycler_item_layout" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/text_loader_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/text_loader_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:gravity="center"
+        android:text="@string/location_loading_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar" />
+
+    <TextView
+        android:id="@+id/text_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/no_data_found"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="progress_bar,text_loader_location" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="text_radius_selector,text_radius_selector_value,slider,text_slider_start,text_slider_end,swipe_refresh_layout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

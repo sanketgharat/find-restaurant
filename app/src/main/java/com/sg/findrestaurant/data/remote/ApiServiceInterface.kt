@@ -14,6 +14,8 @@ interface ApiServiceInterface {
         @Header("Authorization") token: String,
         @Query("term") term: String,
         @Query("location") location: String,
+        @Query("latitude") latitude: Double,
+        @Query("longitude") longitude: Double,
         @Query("radius") radius: Int,
         @Query("sort_by") sortBy: String,
         @Query("limit") limit: Int,
